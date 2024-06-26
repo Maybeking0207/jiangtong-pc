@@ -1,0 +1,92 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import bg from '../../public/indexBg.png'
+import Cores from '@/components/Cores.astro'
+import Technology from '@/components/technology.astro'
+import Services from '@/components/Services.astro'
+import ModuleTitle from '@/components/ModuleTitle.astro'
+import Project from '@/components/Project.vue'
+import News from '@/components/News.vue'
+---
+
+<Layout title="上海疆通科技有限公司" active="1">
+  <main>
+    <Image src={bg} alt="背景图片" />
+    <div class="w-full">
+      <div
+        class="w-full h-[780px] flex items-center px-[20%] py-[60px] bg-white"
+      >
+        <div class="h-full w-[50%]">
+          <ModuleTitle chinese="走进疆通" english="Walk into Jiangtong" />
+          <video
+            autoplay="autoplay"
+            muted
+            loop="loop"
+            width="100%"
+            id="video"
+            class="mt-12"
+          >
+            <source
+              src="https://jungt-website.oss-cn-shanghai.aliyuncs.com/images/3d800667944a60e52a85768559fe4ca8_raw.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div
+          class="h-full w-[50%] border-t-[5px] border-[#294dce] pl-[40px] pt-[40px]"
+        >
+          <div
+            style="letter-spacing: 10px"
+            class="text-[50px] text-[#333] font-[700]"
+          >
+            上海疆通
+          </div>
+          <div
+            style="letter-spacing: 10px"
+            class="text-[50px] text-[#333] font-[700]"
+          >
+            科技有限公司
+          </div>
+          <p
+            style="text-indent: 2em;line-break: anywhere;word-wrap: break-word;white-space: pre-wrap;line-height: 35px"
+            class="text-[#333] font-[400]"
+          >
+            上海疆通科技有限公司，作为一家高新技术企业，持有电子与智能化工程专业承包二级资质，也是华东师范大学毕业生实习基地，超过一半以上员工具备人工智能专业资格证书。疆通科技专注于数字化场景落地服务，希望通过AI技术革新传统管理模式，实现由人工管理向智能管理的跨越。
+          </p>
+          <p
+            style="text-indent: 2em;line-break: anywhere;word-wrap: break-word;white-space: pre-wrap;line-height: 35px"
+            class="text-[#333] font-[400]"
+          >
+            疆通科技的核心策略在于融合物联传感技术（OT）、先进的算法模型与创新的XR（扩展现实）图文展示手段，成功构建IT/OT/XR一体化解决方案。这一方案旨在消除信息孤岛，促进不同技术层面的高效协同，特别是在低代码平台上实现系统集成的无缝对接，降低复杂技术门槛，提升企业高效创新和实现数字化场景落地。
+          </p>
+          <div class="mt-4 h-[100px] flex justify-between">
+            <div class="text-[16px] font-[400] text-[#999]">
+              <span class="text-[46px] text-[#294dce] font-[700]">200</span>
+              <div class="text-[16px] text-[#999] font-[400]">城市覆盖</div>
+            </div>
+            <div role="separator" class="m-4 inline-block w-[1px] bg-[#ccc]">
+            </div>
+            <div class="text-[46px] text-[#294dce] font-[700]">
+              <span data-v-865b471a="">15</span>
+              <div class="text-[16px] text-[#999] font-[400]">自研产品</div>
+            </div>
+            <div role="separator" class="m-4 inline-block w-[1px] bg-[#ccc]">
+            </div>
+            <div class="text-[46px] text-[#294dce] font-[700]">
+              <span data-v-865b471a="">30</span>
+              <div class="text-[16px] text-[#999] font-[400]">合作企业</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Technology />
+      <Cores />
+      <Services />
+      <Project client:idle />
+      <News client:idle />
+    </div>
+  </main>
+</Layout>
+
+<style></style>

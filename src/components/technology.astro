@@ -1,0 +1,55 @@
+---
+const url = 'https://autoreport.site:8888/api/files/gx4kvczkq2l1ijy'
+const s = await fetch(
+  'https://autoreport.site:8888/api/collections/solution/records',
+)
+const { items } = await s.json()
+const list = items.map((item: any) => {
+  return {
+    icon: `${url}/${item.id}/${item.icon}`,
+    title: item.title,
+    line: item.line,
+    content: item.content,
+  }
+})
+const SolutionList = list
+---
+
+<div class="bg-[#F0F2F5] w-full py-[60px]">
+  <div class="text-[40px] text-[#333] font-[700] mx-[20%]">核心技术</div>
+  <div class="text-[26px] text-[#ccc] font-[700] mx-[20%]">Core Technology</div>
+  <div class="mt-[30px]">
+    <div class="text-center mx-[20%] text-[20px] font-[300] mb-14">
+      多元信息感知与智能决策：采集多源信息，进行深度分析与智能判断，精准推荐各类应对预案。
+    </div>
+    <div class="flex space-x-2 mx-[20%]">
+      {
+        SolutionList.map((item: any) => (
+          <div class="bg-white h-[460px] flex-1 relative mb-6 py-8 px-6">
+            <img
+              src={item.icon}
+              class="absolute bottom-0 left-0 right-0 h-[237px] w-full background-size-cover background-repeat"
+            />
+            <div class=" text-[20px] text-[#000] leading-7 mb-4 relative">
+              {item.title}
+            </div>
+            <div class="text-[13px] text-[#000] leading-6 relative h-[96px] font-[400]">
+              <div class="textbox mb-2">{item.line}</div>
+              <div class="textbox">目标：{item.content}</div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .textbox {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

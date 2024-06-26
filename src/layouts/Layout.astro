@@ -1,0 +1,149 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import logo from '../../public/JT-logo.png'
+import { Image } from 'astro:assets'
+import Footer from '@/components/Footer.vue'
+
+interface Props {
+  title: string
+  active: string
+}
+
+const { title, active } = Astro.props
+---
+
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      data-n-head="1"
+      data-hid="Company name"
+      name="Company name"
+      content="上海疆通科技有限公司"
+    />
+    <meta
+      data-n-head="1"
+      data-hid="Jiangtong"
+      name="Jiangtong"
+      content="疆通"
+    />
+    <meta
+      data-n-head="1"
+      data-hid="medical treatment"
+      name="medical treatment"
+      content="医疗"
+    />
+    <meta name="baidu-site-verification" content="codeva-PT3yV321fk" />
+    <meta
+      name="360-site-verification"
+      content="0220b95b13c51f1a7660a15d6c94f3e0"
+    />
+    <meta name="msvalidate.01" content="BC3A30D71F43189937E2DB091806B5EF" />
+    <meta
+      name="google-site-verification"
+      content="uJUqcqU50MLClkz-RLAd0tdNR3pqCNw46ZyjsO8UlB0"
+    />
+    <meta name="sogou_site_verification" content="NkJCTHtbGR" />
+    <meta
+      name="shenma-site-verification"
+      content="98db2ba1debf9a2cf8f63cb4c78638cd_1690276336"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta data-n-head="1" data-hid="glass" name="glass" content="AR眼镜" />
+    <meta data-n-head="1" data-hid="EHS" name="EHS" content="EHS" />
+    <meta data-n-head="1" name="format-detection" content="telephone=no" />
+    <meta name="description" content="上海疆通科技有限公司" />
+    <meta
+      name="keywords"
+      content="有限公司，上海疆通，疆通科技，数字孪生，仿真，元宇宙，AR眼镜，低代码，无代码，智能巡检，视觉巡检，视觉制造，远程指挥，工作流，工易魔方，Workflow，Workflow Canvas，数字化转型，精益制造，应急指挥，应急决策，中台，大数据，知识图谱，人脸识别，人工智能，智能家居，非接触，智能接待，智能迎宾，智慧养老，养老院，客流分析，管理平台，智慧安监，智慧监护，智慧看护，智能门锁，不活动感应，门磁，智能化，场景模式，监控，门禁，报警，广播，巡更，LED屏，大屏幕，可视对讲，无线覆盖，安防，互动多媒体，智能建筑，建筑智能化，安防，综合布线，无线通讯，通讯协议，IT/OT，VR，MR，5g，KNX，ZigBee，CAN，BUS，Lora，NB-Iot，蓝牙，WiFi，FOX433，红外，语音音箱，技防，无线。"
+    />
+    <meta
+      name="seo"
+      content="上海疆通、疆通科技、数字孪生、仿真、元宇宙、AR眼镜、低代码、无代码、智能巡检、视觉巡检、视觉制造、远程指挥、工作流、工易魔方、Workflow、Workflow Canvas、数字化转型、精益制造、应急指挥、应急决策、中台、大数据、知识图谱、人脸识别、人工智能、智能家居、非接触、智能接待、智能迎宾、智慧养老、养老院、客流分析、管理平台、智慧安监、智慧监护、智慧看护、智能门锁、不活动感应、门磁、智能化、场景模式、监控、门禁、报警、广播、巡更、LED屏、大屏幕、可视对讲、无线覆盖、安防、互动多媒体、智能建筑、建筑智能化、安防、综合布线、无线通讯、通讯协议、IT/OT、VR、MR、5g、KNX、ZigBee、CAN、BUS、Lora、NB-Iot、蓝牙、WiFi、FOX433、红外、语音音箱、技防、无线。"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="robots" href="/robots.txt" />
+    <link rel="preload" href="https://autoreport.site:8888" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="overflow-x-hidden">
+    <nav
+      class="h-[100px] bg-[#095dc0] w-full flex justify-between items-center text-white overflow-hidden"
+    >
+      <div class="flex justify-center items-center ml-[20%]">
+        <Image src={logo} alt="logo" width="80" height="80" densities={[4]} />
+        <div class="ml-2">
+          <div
+            style="font-family: PingFangSC-Semibold,PingFang SC,sans-serif; font-weight: 600"
+            class="text-[36px]"
+          >
+            疆通科技
+          </div>
+          <div class="!font-[PingFangSC-Semibold,PingFang SC] text-[14px]">
+            Jiangtong Technology
+          </div>
+        </div>
+      </div>
+      <div
+        class="pt-[1.5%] pl-[1%] box-border list-none w-[50%] right h-full text-foreground flex items-center justify-around"
+      >
+        <div
+          class="bg-white h-full w-full flex items-center justify-around relative"
+        >
+          <div
+            class="bg-[#095dc0] w-[40px] h-[90px] absolute -top-3.5 -left-6 rotate-[20deg]"
+          >
+          </div>
+          <a href="/" class={active === '1' ? 'text-[#294dce]' : 'text-[#777]'}
+            >首页</a
+          >
+          <a
+            href="/about"
+            class={active === '2' ? 'text-[#294dce]' : 'text-[#777]'}
+            >关于我们</a
+          >
+          <a
+            href="/solution"
+            class={active === '3' ? 'text-[#294dce]' : 'text-[#777]'}
+            >解决方案</a
+          >
+          <a
+            href="/case"
+            class={active === '4' ? 'text-[#294dce]' : 'text-[#777]'}
+            >成功案例</a
+          >
+        </div>
+      </div>
+    </nav>
+    <section class="bg-white">
+      <slot />
+    </section>
+    <Footer client:only="vue" />
+    <style is:global>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        color: rgba(0, 0, 0, 0.65);
+        font-size: 14px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol';
+        font-variant: tabular-nums;
+        line-height: 1.5;
+        background-color: #fff;
+        font-feature-settings: 'tnum';
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </body>
+</html>

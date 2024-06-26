@@ -1,0 +1,11 @@
+---
+import ModuleTitle from '@/components/ModuleTitle.astro'
+import ServiceTab from '@/components/ServiceTab.vue'
+---
+
+<div class="bg-[#F0F2F5] w-full h-[720px] py-[60px]">
+  <div class="mx-[20%]">
+    <ModuleTitle chinese="产品服务" english="Product service" />
+    <ServiceTab client:idle />
+  </div>
+</div>

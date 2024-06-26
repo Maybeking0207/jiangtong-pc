@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PresCription from '@/components/PresCription.vue'
+import PocketBase from 'pocketbase'
+export const getStaticPaths = async () => {
+  const pb = new PocketBase('https://autoreport.site:8888')
+  const data = await pb
+    .collection('content')
+    .getFullList({ expand: 'prescriptionList' })
+  return data.map((item) => {
+    return { params: { id: item.id } }
+  })
+}
+const { id } = Astro.params
+---
+
+<Layout title="上海疆通科技有限公司" active="">
+  <main>
+    <PresCription id={id} client:visible />
+  </main>
+</Layout>
+
+<style></style>

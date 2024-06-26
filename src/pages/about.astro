@@ -1,0 +1,30 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import logo from '../../public/AboutLogo.627a361.png'
+import Customers from '@/components/Customers.astro'
+import Culture from '@/components/Culture.vue'
+import Certificate from '@/components/Certificate.vue'
+---
+
+<script></script>
+
+<Layout title="上海疆通科技有限公司" active="2">
+  <main>
+    <div class="w-full">
+      <div class="w-full relative">
+        <Image src={logo} alt="背景图片" />
+        <div class="absolute top-0 pt-[4%] px-[20%]">
+          <h5 class="text-white text-[50px] mb-[25px] mt-0">关于我们</h5>
+          <div class="bg-white h-[4px] w-[34px]"></div>
+          <h6 class="text-white text-[18px] font-normal mt-[23px] w-[350px]">
+            探索智慧生活，提升人类幸福
+          </h6>
+        </div>
+      </div>
+      <Culture client:visible />
+      <Certificate client:visible />
+      <Customers />
+    </div>
+  </main>
+</Layout>
